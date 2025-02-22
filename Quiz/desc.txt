@@ -1,0 +1,1 @@
+Basic and simple quiz class for creating and managing a quiz, consisting of questions
