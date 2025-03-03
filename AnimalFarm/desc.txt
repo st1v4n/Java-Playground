@@ -1,0 +1,2 @@
+Simple Animal abstract class with some inheritors
+Animals are put into a farm
