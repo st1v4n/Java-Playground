@@ -21,13 +21,17 @@ public class Circle extends Shape{
     public boolean isPointIn(Point p){
         return p.getDist(super.getPointAtIndex(0)) <= radius;
     }
-    public boolean equals(Circle other){
-        if(other==null)return false;
-        return super.equals(other) && this.radius == other.radius;
+    @Override
+    public boolean equals(Object other){
+        if(!super.equals(other))return false;
+        Circle new_other = (Circle) other;
+        return this.radius == new_other.radius;
     }
+    @Override
     public int hashCode(){
         return super.hashCode();
     }
+    @Override
     public String toString(){
         return super.toString().concat(" radius: " + radius + "\n");
     }

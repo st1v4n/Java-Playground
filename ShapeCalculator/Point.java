@@ -16,9 +16,11 @@ public class Point {
         double dy = point.y - this.y;
         return sqrt(dx*dx + dy*dy);
     }
-    public boolean equals(Point other){
-        if(other==null)return false;
-        return (this.x==other.x) && (this.y==other.y);
+    public boolean equals(Object other){
+        if(this==other)return true;
+        if(other==null || this.getClass() != other.getClass())return false;
+        Point new_other = (Point) other;
+        return (this.x==new_other.x) && (this.y==new_other.y);
     }
     public int hashCode(){
         return Objects.hash(x, y);

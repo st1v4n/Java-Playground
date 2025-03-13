@@ -18,18 +18,23 @@ public abstract class Shape{
         if(index >= points.size() || index < 0 )throw new ArrayIndexOutOfBoundsException("");
         return points.get(index);
     }
-    public boolean equals(Shape other){
-        if(other==null)return false;
+    @Override
+    public boolean equals(Object other){
+        if(this==other)return true;
+        if(other==null || this.getClass() != other.getClass())return false;
+        Shape new_other = (Shape) other;
         for(int i=0;i<points.size();++i){
-            if(!getPointAtIndex(i).equals(other.getPointAtIndex(i))){
+            if(!getPointAtIndex(i).equals(new_other.getPointAtIndex(i))){
                 return false;
             }
         }
         return true;
     }
+    @Override
     public int hashCode(){
         return Objects.hash(points);
     }
+    @Override
     public String toString(){
         String result = new String("");
         for(int i=0;i<points.size();++i){
