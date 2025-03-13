@@ -1,0 +1,2 @@
+Shape base class
+extended by Circle and Rectangle
