@@ -1,0 +1,1 @@
+simple university system class with human base, student, teacher
